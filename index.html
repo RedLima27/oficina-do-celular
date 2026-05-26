@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina do Celular - Consertos e Acessórios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#" data-pagina="inicio"><img src="assets/images/logo.png" alt="Oficina do Celular" class="logo-img"></a>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#" data-pagina="inicio" class="ativo">Home</a></li>
+                        <li><a href="#" data-pagina="links">Links</a></li>
+                        <li><a href="#" data-pagina="orcamento">Orçamento</a></li>
+                        <li><a href="#" data-pagina="loja">Loja</a></li>
+                        <li><a href="#" data-pagina="consulta-os">Consultar pedido / O.S.</a></li>
+                        <li><a href="#" data-pagina="envio-recado">Enviar com recado</a></li>
+                        <li><a href="#" data-pagina="minha-conta" id="nav-minha-conta">Minha Conta</a></li>
+                    </ul>
+                </nav>
+                <div class="header-acoes">
+                    <button class="carrinho-btn" id="carrinho-btn" type="button">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span id="carrinho-count">0</span>
+                    </button>
+                    <button id="btn-header-conta" class="conta-btn" type="button" title="Minha Conta" data-pagina="minha-conta">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span id="header-conta-label">Entrar</span>
+                    </button>
+                    <button id="tema-btn" class="tema-btn" type="button" title="Alternar tema">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PÁGINA: INÍCIO -->
+    <div id="pagina-inicio" class="pagina ativa">
+        <section class="banner banner-v2">
+            <div class="container banner-v2-grid">
+                <div class="banner-v2-texto">
+                    <p class="banner-badge">📍 Lagoa da Prata, MG</p>
+                    <h2>Seu Celular Quebrou?<br>A Gente Conserta.</h2>
+                    <p>Assistência técnica especializada em <strong>troca de vidro, bateria, câmera</strong> e manutenção em geral — com garantia e agilidade.</p>
+                    <div class="banner-trust-row">
+                        <span class="banner-trust-item">✔ 90 dias de garantia</span>
+                        <span class="banner-trust-item">✔ Sem mensagem de peça trocada</span>
+                        <span class="banner-trust-item">✔ Atendimento pelo Instagram</span>
+                    </div>
+                    <div class="banner-acoes">
+                        <button type="button" class="btn-primary" data-pagina="orcamento">Solicitar Orçamento</button>
+                        <a href="https://envio.oficinadocelular.com.br/" target="_blank" rel="noopener noreferrer" class="btn-secondary banner-link-ext">Enviar aparelho</a>
+                        <button type="button" class="btn-secondary" data-pagina="loja">Ver Loja</button>
+                    </div>
+                </div>
+                <div class="banner-v2-ilustracao" aria-hidden="true">
+                    <svg viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="banner-svg">
+                        <!-- Phone body -->
+                        <rect x="60" y="20" width="160" height="280" rx="24" fill="white" fill-opacity="0.12" stroke="white" stroke-opacity="0.4" stroke-width="2"/>
+                        <rect x="70" y="50" width="140" height="210" rx="8" fill="white" fill-opacity="0.08"/>
+                        <!-- Screen content lines -->
+                        <rect x="85" y="65" width="80" height="10" rx="5" fill="white" fill-opacity="0.5"/>
+                        <rect x="85" y="82" width="110" height="6" rx="3" fill="white" fill-opacity="0.25"/>
+                        <rect x="85" y="95" width="95" height="6" rx="3" fill="white" fill-opacity="0.25"/>
+                        <!-- Crack overlay -->
+                        <path d="M150 60 L130 110 L155 110 L120 180" stroke="white" stroke-opacity="0.7" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Wrench / tool icon top right -->
+                        <circle cx="220" cy="70" r="30" fill="white" fill-opacity="0.15" stroke="white" stroke-opacity="0.3" stroke-width="1.5"/>
+                        <path d="M214 64 C214 60.7 216.7 58 220 58 C221.2 58 222.3 58.4 223.2 59 L219 63.2 L220.8 65 L225 60.8 C225.6 61.7 226 62.8 226 64 C226 67.3 223.3 70 220 70 L211 79 C210.2 79.8 210.2 81.2 211 82 C211.8 82.8 213.2 82.8 214 82 L223 73 C223.7 73 224.4 72.9 225 72.6 L228 75.6 L229.4 74.2 L226.4 71.2 C227.4 69.7 228 67.9 228 66" stroke="white" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <!-- Battery icon -->
+                        <rect x="30" y="170" width="42" height="24" rx="5" fill="white" fill-opacity="0.15" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/>
+                        <rect x="72" y="178" width="5" height="8" rx="2" fill="white" fill-opacity="0.4"/>
+                        <rect x="33" y="173" width="28" height="18" rx="3" fill="#4ade80" fill-opacity="0.6"/>
+                        <!-- Stars / sparkles -->
+                        <path d="M240 140 L242 136 L244 140 L248 142 L244 144 L242 148 L240 144 L236 142 Z" fill="white" fill-opacity="0.6"/>
+                        <path d="M45 120 L46 118 L47 120 L49 121 L47 122 L46 124 L45 122 L43 121 Z" fill="white" fill-opacity="0.4"/>
+                        <path d="M255 200 L256 198 L257 200 L259 201 L257 202 L256 204 L255 202 L253 201 Z" fill="white" fill-opacity="0.3"/>
+                        <!-- Camera lens circle -->
+                        <circle cx="160" cy="35" r="8" fill="white" fill-opacity="0.15" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/>
+                        <circle cx="160" cy="35" r="4" fill="white" fill-opacity="0.25"/>
+                        <!-- Bottom home pill -->
+                        <rect x="120" y="283" width="40" height="5" rx="2.5" fill="white" fill-opacity="0.4"/>
+                        <!-- Price tag floating -->
+                        <rect x="30" y="220" width="90" height="38" rx="10" fill="white" fill-opacity="0.15" stroke="white" stroke-opacity="0.3" stroke-width="1.5"/>
+                        <text x="42" y="236" font-family="system-ui,sans-serif" font-size="9" fill="white" fill-opacity="0.7">a partir de</text>
+                        <text x="42" y="252" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="white">R$ 89,90</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-servicos">
+            <div class="container">
+                <h2>O que fazemos</h2>
+                <p class="secao-subtitulo">Reparos para as marcas mais usadas do mercado</p>
+                <div class="servicos-grid">
+                    <article class="servico-card">
+                        <span class="servico-icone">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+                                <rect x="10" y="4" width="28" height="40" rx="5" stroke="currentColor" stroke-width="2.5"/>
+                                <rect x="15" y="10" width="18" height="24" rx="2" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M18 6 H30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="24" cy="39" r="2" fill="currentColor"/>
+                                <!-- crack -->
+                                <path d="M26 12 L21 22 L25 22 L19 34" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+                            </svg>
+                        </span>
+                        <h3>Troca de vidro</h3>
+                        <p>Especialidade da casa. Vidro original e paralelo de qualidade.</p>
+                        <span class="servico-preco-tag">a partir de R$ 89,90</span>
+                    </article>
+                    <article class="servico-card">
+                        <span class="servico-icone">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+                                <rect x="8" y="12" width="32" height="22" rx="5" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M40 19 H43 V27 H40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="11" y="15" width="22" height="16" rx="3" fill="currentColor" fill-opacity="0.15"/>
+                                <rect x="11" y="15" width="14" height="16" rx="3" fill="currentColor" fill-opacity="0.4"/>
+                                <path d="M20 37 L28 37" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M24 34 L24 37" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </span>
+                        <h3>Bateria</h3>
+                        <p>Celular descarregando rápido? Troca com teste de desempenho.</p>
+                        <span class="servico-preco-tag">a partir de R$ 119,90</span>
+                    </article>
+                    <article class="servico-card">
+                        <span class="servico-icone">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+                                <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="24" cy="24" r="6" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+                                <path d="M24 8 L24 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M24 36 L24 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M8 24 L12 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M36 24 L40 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <h3>Câmera e áudio</h3>
+                        <p>Foco, lente e microfone — diagnóstico completo.</p>
+                        <span class="servico-preco-tag">a partir de R$ 149,90</span>
+                    </article>
+                    <article class="servico-card">
+                        <span class="servico-icone">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="44" height="44">
+                                <path d="M24 6 C30 6 40 14 40 24 C40 34 34 44 24 44 C14 44 8 34 8 24 C8 14 18 6 24 6Z" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.08"/>
+                                <path d="M16 20 C16 16 20 12 24 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M20 30 Q24 26 28 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M14 28 Q11 22 14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                                <!-- drops -->
+                                <circle cx="30" cy="18" r="2" fill="currentColor" fill-opacity="0.5"/>
+                                <circle cx="34" cy="22" r="1.5" fill="currentColor" fill-opacity="0.35"/>
+                            </svg>
+                        </span>
+                        <h3>Dano por água</h3>
+                        <p>Limpeza de placa e recuperação quando possível.</p>
+                        <span class="servico-preco-tag">consultar</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-como-funciona">
+            <div class="container">
+                <h2>Como funciona</h2>
+                <div class="passos-grid">
+                    <div class="passo-card">
+                        <span class="passo-num">1</span>
+                        <h3>Orçamento</h3>
+                        <p>Use o assistente online, Instagram ou envie o aparelho pelo site oficial.</p>
+                        <button type="button" class="btn-secondary btn-passo" data-pagina="orcamento">Fazer orçamento</button>
+                    </div>
+                    <div class="passo-card">
+                        <span class="passo-num">2</span>
+                        <h3>Reparo</h3>
+                        <p>Consertamos com peças de qualidade e te mantemos informado.</p>
+                        <button type="button" class="btn-secondary btn-passo" data-pagina="consulta-os">Consultar O.S.</button>
+                    </div>
+                    <div class="passo-card">
+                        <span class="passo-num">3</span>
+                        <h3>Retirada</h3>
+                        <p>Acompanhe o status e retire quando estiver pronto.</p>
+                        <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-passo">Falar no Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-destaques loja">
+            <div class="container">
+                <div class="secao-header">
+                    <div>
+                        <h2>Destaques da loja</h2>
+                        <p class="secao-subtitulo">Acessórios e seminovos — adicione ao carrinho direto da home</p>
+                    </div>
+                    <button type="button" class="btn-secondary" data-pagina="loja">Ver todos os produtos</button>
+                </div>
+                <div id="home-produtos-destaque" class="produtos-grid"></div>
+            </div>
+        </section>
+
+        <section class="home-consulta">
+            <div class="container home-consulta-box">
+                <div class="home-consulta-texto">
+                    <h2>Acompanhe seu pedido ou O.S.</h2>
+                    <p>Digite o número do pedido (<strong>PED-</strong>) ou da ordem de serviço (<strong>OS-</strong>) e veja o status em tempo real.</p>
+                </div>
+                <button type="button" class="btn-primary" data-pagina="consulta-os">Consultar O.S.</button>
+            </div>
+        </section>
+
+        <section class="home-recado-cta">
+            <div class="container home-consulta-box home-recado-box">
+                <div class="home-consulta-texto">
+                    <h2>Mandou o celular com bilhete na mão?</h2>
+                    <p>Registre aqui o que está escrito no recado — a oficina vê no painel interno.</p>
+                </div>
+                <button type="button" class="btn-secondary" data-pagina="envio-recado" style="background: white; color: var(--accent-primary);">Registrar recado</button>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="depoimentos">
+            <div class="container">
+                <h2>O que dizem nossos clientes</h2>
+                <p class="secao-subtitulo" style="text-align:center;margin-bottom:2rem">Depoimentos reais em breve — enquanto isso, confira nosso Instagram!</p>
+                <div style="text-align:center">
+                    <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        Ver avaliações no Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-cta-final">
+            <div class="container">
+                <h2>Todos os links em um só lugar</h2>
+                <p>Cursos, parceiros, envio de aparelho e redes sociais.</p>
+                <button type="button" class="btn-primary" data-pagina="links">Ver links oficiais</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA: LINKS (Linktree) -->
+    <div id="pagina-links" class="pagina">
+        <section id="links-hub" class="links-hub">
+            <div class="container links-hub-inner">
+                <h2>Links Oficiais</h2>
+                <p class="links-tagline">Tudo em um lugar — como no nosso Linktree</p>
+
+                <div class="redes-sociais">
+                    <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer" class="rede-btn" title="Instagram">Instagram</a>
+                    <a href="https://www.tiktok.com/@oficialoficinadocelular" target="_blank" rel="noopener noreferrer" class="rede-btn" title="TikTok">TikTok</a>
+                    <a href="https://www.facebook.com/oficialoficinadocelular" target="_blank" rel="noopener noreferrer" class="rede-btn" title="Facebook">Facebook</a>
+                    <a href="https://www.youtube.com/@oficialoficinadocelular" target="_blank" rel="noopener noreferrer" class="rede-btn" title="YouTube">YouTube</a>
+                </div>
+
+                <div class="links-list">
+                    <h3 class="links-grupo-titulo">Oficina &amp; Serviços</h3>
+                    <a href="https://envio.oficinadocelular.com.br/" target="_blank" rel="noopener noreferrer" class="link-card link-card-destaque">
+                        <span class="link-icone">📦</span>
+                        <span class="link-texto">
+                            <strong>Enviar celular para reparo</strong>
+                            <small>Formulário oficial de envio do aparelho</small>
+                        </span>
+                    </a>
+                    <a href="#" data-pagina="orcamento" class="link-card link-card-interno">
+                        <span class="link-icone">💰</span>
+                        <span class="link-texto">
+                            <strong>Orçamento online</strong>
+                            <small>Estimativa por marca, modelo e defeito</small>
+                        </span>
+                    </a>
+                    <a href="#" data-pagina="consulta-os" class="link-card link-card-interno">
+                        <span class="link-icone">🔍</span>
+                        <span class="link-texto">
+                            <strong>Consultar ordem de serviço</strong>
+                            <small>Acompanhe o status da sua O.S.</small>
+                        </span>
+                    </a>
+                    <a href="#" data-pagina="loja" class="link-card link-card-interno">
+                        <span class="link-icone">🛒</span>
+                        <span class="link-texto">
+                            <strong>Loja virtual</strong>
+                            <small>Acessórios e celulares seminovos</small>
+                        </span>
+                    </a>
+                    <a href="#" data-pagina="envio-recado" class="link-card link-card-interno">
+                        <span class="link-icone">📝</span>
+                        <span class="link-texto">
+                            <strong>Recado na mão (bilhete)</strong>
+                            <small>Registrar o que o cliente escreveu no papel</small>
+                        </span>
+                    </a>
+                    <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">📲</span>
+                        <span class="link-texto">
+                            <strong>Orçamento pelo Instagram</strong>
+                            <small>@oficialoficinadocelular</small>
+                        </span>
+                    </a>
+
+                    <h3 class="links-grupo-titulo">Cursos</h3>
+                    <a href="https://pay.kiwify.com.br/DjV55xe" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">📈</span>
+                        <span class="link-texto">
+                            <strong>Aprenda a viralizar e atrair clientes</strong>
+                            <small>Curso na Kiwify</small>
+                        </span>
+                    </a>
+                    <a href="https://pay.hotmart.com/Y85009830U" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">🔬</span>
+                        <span class="link-texto">
+                            <strong>Curso de troca de vidro</strong>
+                            <small>Curso na Hotmart</small>
+                        </span>
+                    </a>
+
+                    <h3 class="links-grupo-titulo">Parceiros &amp; produtos</h3>
+                    <a href="https://skaiky.com.br/" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">🔋</span>
+                        <span class="link-texto">
+                            <strong>Baterias Skaiky</strong>
+                            <small>Baterias e acessórios de qualidade</small>
+                        </span>
+                    </a>
+                    <a href="https://zactec.com.br/loja/23642/fita-dupla-face-3m-zactec" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">📏</span>
+                        <span class="link-texto">
+                            <strong>Fita dupla face Fixble Pro 50m</strong>
+                            <small>Zactec</small>
+                        </span>
+                    </a>
+                    <a href="https://zactec.com.br/loja/25607/groode-aditivo-para-colagem-10ml" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <span class="link-icone">🧪</span>
+                        <span class="link-texto">
+                            <strong>Groode — aditivo para colagem 10ml</strong>
+                            <small>Zactec</small>
+                        </span>
+                    </a>
+
+                    <h3 class="links-grupo-titulo">Contato</h3>
+                    <a href="mailto:rhoficinadocelular@gmail.com" class="link-card">
+                        <span class="link-icone">🤝</span>
+                        <span class="link-texto">
+                            <strong>Parcerias</strong>
+                            <small>rhoficinadocelular@gmail.com</small>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA: ORÇAMENTO -->
+    <div id="pagina-orcamento" class="pagina">
+        <section class="orcamento-hero">
+            <div class="container">
+                <h2>Assistente de Orçamento</h2>
+                <p class="secao-subtitulo">Selecione a marca, o modelo e veja os serviços disponíveis</p>
+                <div class="orcamento-info-btns">
+                    <button type="button" class="btn-info" data-modal="modal-garantia">Garantia</button>
+                    <button type="button" class="btn-info" data-modal="modal-reparos">O que reparamos</button>
+                    <button type="button" class="btn-info" data-modal="modal-prazos">Prazos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETAPA 1: SELEÇÃO DE MARCA E MODELO -->
+        <section id="etapa-marcas" class="orcamento-etapa">
+            <div class="container">
+                <div class="etapa-header">
+                    <span class="etapa-num">1</span>
+                    <h3>Escolha a marca</h3>
+                </div>
+                <div class="marcas-grid">
+                    <button type="button" class="marca-card" data-marca="apple">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.2 1.28-2.18 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.35 2.77M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        </span>
+                        <span class="marca-nome">Apple</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="samsung">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm5.1 19.4c-1.1 1-2.6 1.6-4.4 1.6-2.1 0-3.9-.8-5.1-2.1l1.6-1.6c.8.9 2 1.5 3.4 1.5 1.7 0 2.8-.8 2.8-2 0-1-.6-1.6-2.2-2l-1.4-.4c-2.4-.7-3.6-2-3.6-3.9 0-2.3 1.9-3.9 4.7-3.9 1.8 0 3.3.6 4.4 1.7l-1.5 1.5c-.7-.7-1.7-1.1-2.9-1.1-1.5 0-2.4.7-2.4 1.8 0 .9.5 1.4 2 1.9l1.4.4c2.6.7 3.8 2 3.8 4.1 0 1.1-.4 2-1.1 2.5z"/>
+                            </svg>
+                        </span>
+                        <span class="marca-nome">Samsung</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="motorola">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <!-- Batwing M: duas pernas verticais curvas que se encontram no centro -->
+                                <path d="M8 11 L8 19 Q8 21 10 21 Q12 21 12 19 L12 15.5 Q12 14 13.5 14 Q14.5 14 15 15 L16 17 L17 15 Q17.5 14 18.5 14 Q20 14 20 15.5 L20 19 Q20 21 22 21 Q24 21 24 19 L24 11 L21 11 L16 17.5 L11 11 Z" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </span>
+                        <span class="marca-nome">Motorola</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="xiaomi">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h7v16H4zm9 0h3c2.2 0 4 1.8 4 4v8c0 2.2-1.8 4-4 4h-3V4zm3 14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-1v12h1z"/></svg>
+                        </span>
+                        <span class="marca-nome">Xiaomi</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="lg">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <!-- L -->
+                                <path d="M8 9 L8 23 L15 23 L15 20.5 L10.5 20.5 L10.5 9 Z" fill="currentColor"/>
+                                <!-- G com gap no lado direito -->
+                                <path d="M19.5 10.5 Q17 10.5 17 13.5 L17 18.5 Q17 21.5 19.5 21.5 L24 21.5 L24 16 L21 16 L21 18.5 L21.5 18.5 L21.5 19.2 L19.5 19.2 Q19.5 19.2 19.5 18.5 L19.5 13.5 Q19.5 13 20.5 13 L24 13 L24 10.5 Z" fill="currentColor"/>
+                                <!-- Ponto/face do G (olho) -->
+                                <rect x="22" y="16" width="2" height="2.5" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="marca-nome">LG</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="realme">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/><path d="M9 6h4a2 2 0 0 1 0 4h-4m0-4v4m4 0l3 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="marca-nome">Realme</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="tablets">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="2" width="18" height="20" rx="3"/><line x1="3" y1="17" x2="21" y2="17"/><circle cx="12" cy="19.5" r=".8" fill="currentColor" stroke="none"/><rect x="6" y="5" width="12" height="9" rx="1.5" fill="currentColor" fill-opacity=".1"/></svg>
+                        </span>
+                        <span class="marca-nome">Tablets</span>
+                    </button>
+                    <button type="button" class="marca-card" data-marca="apple_watch">
+                        <span class="marca-icone">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="6" width="10" height="12" rx="4"/><path d="M9 6V4.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V6M9 18v1.5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V18"/><line x1="17" y1="10" x2="17" y2="14"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="10.5" x2="12" y2="12" stroke-linecap="round"/></svg>
+                        </span>
+                        <span class="marca-nome">Apple Watch</span>
+                    </button>
+                </div>
+
+                <div id="modelos-wrap" class="modelos-wrap" style="display:none">
+                    <div class="etapa-header" style="margin-top:2rem">
+                        <span class="etapa-num">2</span>
+                        <h3>Escolha o modelo</h3>
+                    </div>
+                    <input type="text" id="busca-modelos" class="busca-input busca-modelos" placeholder="Buscar modelo...">
+                    <div id="lista-modelos" class="lista-modelos"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETAPA 2: SERVIÇOS E PREÇOS -->
+        <section id="etapa-servicos" class="orcamento-etapa" style="display:none">
+            <div class="container">
+                <button type="button" class="btn-voltar" id="btn-voltar-marcas">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                    Voltar para marcas
+                </button>
+                <div class="etapa-header">
+                    <span class="etapa-num">3</span>
+                    <h3>Serviços disponíveis para <span id="modelo-selecionado-titulo"></span></h3>
+                </div>
+                <div id="lista-servicos" class="lista-servicos"></div>
+                <div class="servicos-acoes">
+                    <button type="button" class="btn-primary" id="btn-ir-envio">
+                        Enviar Aparelho para este serviço
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETAPA 3: FORMULÁRIO DE ENVIO -->
+        <section id="etapa-envio" class="orcamento-etapa" style="display:none">
+            <div class="container">
+                <button type="button" class="btn-voltar" id="btn-voltar-servicos">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                    Voltar aos valores
+                </button>
+                <div class="etapa-header">
+                    <span class="etapa-num">4</span>
+                    <h3>Seus dados para contato</h3>
+                </div>
+                <form id="form-orcamento-envio" class="form-recado">
+                    <input type="hidden" id="aparelho-selecionado">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="orc-nome">Seu nome *</label>
+                            <input type="text" id="orc-nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orc-telefone">WhatsApp *</label>
+                            <input type="tel" id="orc-telefone" placeholder="(37) 99999-9999" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="orc-aparelho-display">Aparelho</label>
+                            <input type="text" id="orc-aparelho-display" readonly style="opacity:.7;cursor:default">
+                        </div>
+                        <div class="form-group">
+                            <label for="orc-senha">Senha do celular (opcional)</label>
+                            <input type="text" id="orc-senha" placeholder="Só se for deixar o aparelho">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="orc-problema">Serviços de interesse</label>
+                        <textarea id="orc-problema" rows="3" placeholder="Preenchido automaticamente..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="orc-obs">Observações extras</label>
+                        <textarea id="orc-obs" rows="2" placeholder="Detalhes adicionais, urgência, etc."></textarea>
+                    </div>
+                    <p class="recado-aviso">
+                        Este formulário <strong>não substitui</strong> o envio físico. Use também o
+                        <a href="https://envio.oficinadocelular.com.br/" target="_blank" rel="noopener noreferrer">site oficial de envio</a>
+                        se for mandar pelos Correios.
+                    </p>
+                    <button type="submit" class="btn-primary btn-large">Registrar solicitação</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA: LOJA -->
+    <div id="pagina-loja" class="pagina">
+        <section class="loja-banner">
+            <div class="container">
+                <h1>Loja Virtual</h1>
+                <p>Acessórios, celulares seminovos e peças de reposição</p>
+            </div>
+        </section>
+        <main class="loja-main">
+            <div class="container">
+                <aside class="loja-sidebar">
+                    <h3>Filtros</h3>
+                    <div class="filtro-grupo">
+                        <h4>Categoria</h4>
+                        <label><input type="checkbox" class="filtro-categoria" value="acessorios"> Acessórios</label>
+                        <label><input type="checkbox" class="filtro-categoria" value="celulares"> Celulares Seminovos</label>
+                        <label><input type="checkbox" class="filtro-categoria" value="protecao"> Proteção</label>
+                        <label><input type="checkbox" class="filtro-categoria" value="audio"> Áudio</label>
+                    </div>
+                    <div class="filtro-grupo">
+                        <h4>Preço</h4>
+                        <input type="range" id="filtro-preco" min="0" max="2000" value="2000" class="preco-range">
+                        <p>Até R$ <span id="preco-display">2000</span></p>
+                    </div>
+                    <div class="filtro-grupo">
+                        <h4>Marca</h4>
+                        <label><input type="checkbox" class="filtro-marca" value="apple"> Apple</label>
+                        <label><input type="checkbox" class="filtro-marca" value="samsung"> Samsung</label>
+                        <label><input type="checkbox" class="filtro-marca" value="xiaomi"> Xiaomi</label>
+                        <label><input type="checkbox" class="filtro-marca" value="motorola"> Motorola</label>
+                        <label><input type="checkbox" class="filtro-marca" value="generico"> Genérico</label>
+                    </div>
+                    <button id="limpar-filtros" class="btn-secondary" type="button">Limpar Filtros</button>
+                </aside>
+                <section class="loja-produtos">
+                    <div class="loja-header">
+                        <h2>Produtos</h2>
+                        <div class="loja-controles">
+                            <input type="text" id="busca-produtos" placeholder="Buscar produtos..." class="busca-input">
+                            <select id="ordenar-produtos" class="ordenar-select">
+                                <option value="relevancia">Relevância</option>
+                                <option value="preco-asc">Menor Preço</option>
+                                <option value="preco-desc">Maior Preço</option>
+                                <option value="nome">Nome (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="produtos-container" class="produtos-grid-loja"></div>
+                    <div id="sem-produtos" class="sem-produtos" style="display: none;">
+                        <p>Nenhum produto encontrado com os filtros selecionados.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- PÁGINA: CONSULTA PEDIDO / O.S. -->
+    <div id="pagina-consulta-os" class="pagina">
+
+        <!-- Hero -->
+        <div class="consulta-hero">
+            <div class="container">
+                <h2>Consultar Pedido ou O.S.</h2>
+                <p class="consulta-hero-sub">Digite o número do pedido (<strong>PED-</strong>) ou da ordem de serviço (<strong>OS-</strong>)</p>
+                <div class="consulta-barra">
+                    <input type="text" id="numero-os" class="consulta-input" placeholder="Ex: PED-123456 ou OS-001" autocomplete="off">
+                    <button id="btn-consultar" class="btn-primary" type="button">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Consultar
+                    </button>
+                </div>
+                <div id="consulta-erro" class="consulta-erro" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- Resultado O.S. -->
+        <div id="card-resultado-os" class="container resultado-container" style="display:none">
+            <div class="resultado-card">
+                <div class="resultado-card-header">
+                    <div>
+                        <div class="resultado-tipo-badge resultado-tipo-os">Ordem de Serviço</div>
+                        <div class="resultado-numero" id="r-os-numero"></div>
+                    </div>
+                    <span class="status-badge" id="r-os-status-badge"></span>
+                </div>
+
+                <!-- Barra de progresso O.S. -->
+                <div class="resultado-progress">
+                    <div class="progress-steps" id="r-os-progress"></div>
+                </div>
+
+                <!-- Banner pronto -->
+                <div id="r-os-pronto-banner" class="resultado-pronto-banner" style="display:none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <p>Seu aparelho está <strong>pronto para retirada!</strong></p>
+                </div>
+
+                <!-- Detalhes -->
+                <div class="resultado-detalhes">
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Cliente</span>
+                        <span class="resultado-detalhe-valor" id="r-os-cliente"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Aparelho</span>
+                        <span class="resultado-detalhe-valor" id="r-os-aparelho"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Defeito</span>
+                        <span class="resultado-detalhe-valor" id="r-os-defeito"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Valor estimado</span>
+                        <span class="resultado-detalhe-valor" id="r-os-valor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultado PEDIDO -->
+        <div id="card-resultado-pedido" class="container resultado-container" style="display:none">
+            <div class="resultado-card">
+                <div class="resultado-card-header">
+                    <div>
+                        <div class="resultado-tipo-badge resultado-tipo-pedido">Pedido da Loja</div>
+                        <div class="resultado-numero" id="r-ped-numero"></div>
+                    </div>
+                    <span class="status-badge" id="r-ped-status-badge"></span>
+                </div>
+
+                <!-- Barra de progresso pedido -->
+                <div class="resultado-progress">
+                    <div class="progress-steps" id="r-ped-progress"></div>
+                </div>
+
+                <!-- Rastreio -->
+                <div id="r-ped-rastreio-wrap" class="resultado-rastreio-wrap" style="display:none">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <div>
+                        <span class="resultado-detalhe-label">Código de rastreio</span>
+                        <a id="r-ped-rastreio-link" href="#" target="_blank" rel="noopener" class="rastreio-link-pub"></a>
+                    </div>
+                </div>
+
+                <!-- Detalhes -->
+                <div class="resultado-detalhes">
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Cliente</span>
+                        <span class="resultado-detalhe-valor" id="r-ped-cliente"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Data do pedido</span>
+                        <span class="resultado-detalhe-valor" id="r-ped-data"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Total</span>
+                        <span class="resultado-detalhe-valor" id="r-ped-total"></span>
+                    </div>
+                    <div class="resultado-detalhe-item">
+                        <span class="resultado-detalhe-label">Pagamento</span>
+                        <span class="resultado-detalhe-valor" id="r-ped-pagamento"></span>
+                    </div>
+                </div>
+
+                <!-- Itens do pedido -->
+                <div class="resultado-itens">
+                    <span class="resultado-detalhe-label" style="display:block;margin-bottom:.625rem">Itens do pedido</span>
+                    <div id="r-ped-itens"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dica quando vazio -->
+        <div class="container">
+            <div class="consulta-dica" id="consulta-dica">
+                <div class="consulta-dica-grid">
+                    <div class="consulta-dica-card">
+                        <span class="consulta-dica-icone">🔧</span>
+                        <strong>Ordem de Serviço</strong>
+                        <p>Número informado pela oficina quando você deixa o aparelho para conserto. Começa com <code>OS-</code>.</p>
+                    </div>
+                    <div class="consulta-dica-card">
+                        <span class="consulta-dica-icone">📦</span>
+                        <strong>Pedido da Loja</strong>
+                        <p>Número gerado ao finalizar uma compra na loja virtual. Começa com <code>PED-</code> e inclui o código de rastreio dos Correios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA: ENVIAR COM RECADO (carta na mão) -->
+    <div id="pagina-envio-recado" class="pagina">
+        <section class="recado-section">
+            <div class="container recado-container">
+                <h2>Enviar celular com recado na mão</h2>
+                <p class="secao-subtitulo recado-intro">
+                    Muita gente manda o aparelho com um bilhete escrito à mão. Preencha abaixo o que está no recado
+                    para a oficina já saber o que você precisa ao receber o pacote.
+                </p>
+
+                <form id="form-recado" class="form-recado">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recado-nome">Seu nome *</label>
+                            <input type="text" id="recado-nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recado-telefone">WhatsApp / telefone *</label>
+                            <input type="tel" id="recado-telefone" placeholder="(37) 99999-9999" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recado-aparelho">Modelo do aparelho *</label>
+                            <input type="text" id="recado-aparelho" placeholder="Ex: iPhone 13, Galaxy A53" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recado-senha">Senha do celular (se deixou no recado)</label>
+                            <input type="text" id="recado-senha" placeholder="Opcional — só se você anotou">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recado-texto">O que está escrito no bilhete / carta? *</label>
+                        <textarea id="recado-texto" rows="4" placeholder="Ex: Troca de tela, urgente, me liga quando ficar pronto..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recado-problema">Problema do aparelho</label>
+                        <textarea id="recado-problema" rows="3" placeholder="Detalhes: tela trincada, não liga, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recado-obs">Observações extras</label>
+                        <textarea id="recado-obs" rows="2" placeholder="Cor da capa, acessórios na caixa, etc."></textarea>
+                    </div>
+                    <p class="recado-aviso">
+                        Isso <strong>não substitui</strong> o envio físico. Depois de registrar, use também o
+                        <a href="https://envio.oficinadocelular.com.br/" target="_blank" rel="noopener noreferrer">site oficial de envio</a>
+                        se for mandar pelos Correios.
+                    </p>
+                    <button type="submit" class="btn-primary btn-large">Registrar recado para a oficina</button>
+                </form>
+
+                <div id="recado-sucesso" style="display:none" data-codigo=""></div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA: CHECKOUT -->
+    <div id="pagina-checkout" class="pagina">
+        <main class="checkout-main">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div class="checkout-container">
+                    <section class="checkout-form">
+                        <div class="checkout-section">
+                            <h2> Endereço de Entrega</h2>
+                            <form id="form-endereco" class="form-checkout">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nome">Nome Completo *</label>
+                                        <input type="text" id="nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="telefone">Telefone *</label>
+                                        <input type="tel" id="telefone" placeholder="(11) 98765-4321" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cep">CEP *</label>
+                                        <input type="text" id="cep" placeholder="00000-000" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rua">Rua *</label>
+                                    <input type="text" id="rua" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="numero">Número *</label>
+                                        <input type="text" id="numero" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="complemento">Complemento</label>
+                                        <input type="text" id="complemento">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="bairro">Bairro *</label>
+                                        <input type="text" id="bairro" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cidade">Cidade *</label>
+                                        <input type="text" id="cidade" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estado">Estado *</label>
+                                        <input type="text" id="estado" maxlength="2" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="checkout-section">
+                            <h2>Método de Pagamento</h2>
+                            <div class="pagamento-opcoes">
+                                <label class="pagamento-option">
+                                    <input type="radio" name="pagamento" value="cartao" checked>
+                                    <span class="opcao-label"> Cartão de Crédito</span>
+                                </label>
+                                <label class="pagamento-option">
+                                    <input type="radio" name="pagamento" value="boleto">
+                                    <span class="opcao-label">Boleto Bancário</span>
+                                </label>
+                                <label class="pagamento-option">
+                                    <input type="radio" name="pagamento" value="pix">
+                                    <span class="opcao-label">PIX</span>
+                                </label>
+                            </div>
+                            <div id="cartao-form" class="pagamento-form">
+                                <div class="form-group">
+                                    <label for="numero-cartao">Número do Cartão *</label>
+                                    <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" maxlength="19">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="validade">Validade *</label>
+                                        <input type="text" id="validade" placeholder="MM/AA" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" placeholder="000" maxlength="3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="titular">Nome do Titular *</label>
+                                    <input type="text" id="titular">
+                                </div>
+                                <div class="form-group">
+                                    <label for="parcelas">Parcelar em:</label>
+                                    <select id="parcelas">
+                                        <option value="1">1x sem juros</option>
+                                        <option value="3">3x sem juros</option>
+                                        <option value="6">6x com juros</option>
+                                        <option value="12">12x com juros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="pix-form" class="pagamento-form" style="display: none;">
+                                <p class="info-pix">Após confirmar o pedido, você receberá a chave PIX para pagar.</p>
+                            </div>
+                            <div id="boleto-form" class="pagamento-form" style="display: none;">
+                                <p class="info-boleto">O código do boleto será enviado por email após a confirmação.</p>
+                            </div>
+                        </div>
+                        <button id="btn-confirmar" class="btn-primary btn-large" type="button">Confirmar Pedido</button>
+                    </section>
+                    <aside class="checkout-resumo">
+                        <h2>Resumo do Pedido</h2>
+                        <div id="resumo-itens" class="resumo-itens"></div>
+                        <div class="resumo-totais">
+                            <div class="resumo-linha">
+                                <span>Subtotal:</span>
+                                <span id="checkout-subtotal">R$ 0,00</span>
+                            </div>
+                            <div class="resumo-linha">
+                                <span>Frete:</span>
+                                <span id="checkout-frete">R$ 15,00</span>
+                            </div>
+                            <div class="resumo-linha total">
+                                <span>Total:</span>
+                                <span id="checkout-total">R$ 0,00</span>
+                            </div>
+                        </div>
+                        <button id="btn-voltar-loja" class="btn-secondary" type="button">← Voltar para Loja</button>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL CARRINHO -->
+    <div id="modal-carrinho" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Seu Carrinho</h2>
+                <button class="modal-close" id="fechar-carrinho" type="button">&times;</button>
+            </div>
+            <div id="carrinho-itens" class="carrinho-itens"></div>
+            <div id="carrinho-vazio" class="carrinho-vazio" style="display: none;">
+                <p>Seu carrinho está vazio</p>
+            </div>
+            <div class="carrinho-resumo">
+                <div class="resumo-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R$ 0,00</span>
+                </div>
+                <div class="resumo-item">
+                    <span>Frete:</span>
+                    <span id="frete">R$ 0,00</span>
+                </div>
+                <div class="resumo-item total">
+                    <span>Total:</span>
+                    <span id="total">R$ 0,00</span>
+                </div>
+                <button id="btn-checkout" class="btn-primary" type="button" style="width: 100%; margin-top: 20px;">
+                    Ir para Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMAÇÃO PEDIDO -->
+    <div id="modal-confirmacao" class="modal" style="display: none;">
+        <div class="modal-content modal-confirmacao">
+            <div class="modal-icon">✅</div>
+            <h2>Pedido Realizado com Sucesso!</h2>
+            <p id="pedido-numero">Número do pedido: <strong></strong></p>
+            <p class="pedido-info">Você receberá um email com os detalhes da sua compra.</p>
+            <button id="btn-voltar-home" class="btn-primary" type="button">Voltar para Home</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <strong class="footer-brand">Oficina do Celular</strong>
+                <p>Assistência técnica especializada.<br>Consertamos com qualidade e honestidade.</p>
+                <p class="footer-redes">
+                    <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    ·
+                    <a href="https://www.tiktok.com/@oficialoficinadocelular" target="_blank" rel="noopener noreferrer">TikTok</a>
+                    ·
+                    <a href="https://www.facebook.com/oficialoficinadocelular" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    ·
+                    <a href="https://www.youtube.com/@oficialoficinadocelular" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <strong>Localização &amp; Contato</strong>
+                <p>📍 Lagoa da Prata, MG</p>
+                <p>✉️ <a href="mailto:rhoficinadocelular@gmail.com">rhoficinadocelular@gmail.com</a></p>
+                <p>📲 <a href="https://www.instagram.com/oficialoficinadocelular/" target="_blank" rel="noopener noreferrer">@oficialoficinadocelular</a></p>
+            </div>
+            <div class="footer-col">
+                <strong>Horário de Atendimento</strong>
+                <p>Segunda a Sexta: <strong>a confirmar</strong></p>
+                <p>Sábado: <strong>a confirmar</strong></p>
+                <p style="margin-top:.5rem;font-size:.8125rem;opacity:.6">Envios aceitos pelos Correios — consulte o <a href="https://envio.oficinadocelular.com.br/" target="_blank" rel="noopener noreferrer" style="color:inherit">site de envio</a>.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Oficina do Celular. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+    <!-- MODAL RECADO REGISTRADO -->
+    <div id="modal-recado-ok" class="modal-recado-overlay" style="display:none" role="dialog" aria-modal="true">
+        <div class="modal-recado-box">
+            <div class="modal-recado-icon">
+                <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+            <h3 class="modal-recado-titulo">Recado registrado!</h3>
+            <p class="modal-recado-sub">Seu aparelho foi cadastrado com sucesso. Apresente o código abaixo na oficina.</p>
+            <div class="modal-recado-codigo-wrap">
+                <span class="modal-recado-label">Código do recado</span>
+                <span id="modal-recado-codigo" class="modal-recado-codigo-val">—</span>
+            </div>
+            <p class="modal-recado-dica">Guarde este código para consultar o status do conserto.</p>
+            <div class="modal-recado-btns">
+                <button type="button" id="modal-recado-copiar" class="btn-modal-sec">Copiar código</button>
+                <button type="button" id="modal-recado-fechar" class="btn-modal-pri">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA: MINHA CONTA -->
+    <div id="pagina-minha-conta" class="pagina">
+
+        <!-- Estado: DESLOGADO — tabs Login / Cadastro -->
+        <div id="conta-deslogado">
+            <section class="conta-hero">
+                <div class="container">
+                    <h2>Minha Conta</h2>
+                    <p class="secao-subtitulo">Acesse seu histórico de pedidos, orçamentos e ordens de serviço</p>
+                </div>
+            </section>
+            <div class="container conta-auth-wrap">
+                <div class="conta-tabs">
+                    <button type="button" class="conta-tab ativo" data-tab="login">Entrar</button>
+                    <button type="button" class="conta-tab" data-tab="cadastro">Criar conta</button>
+                </div>
+
+                <!-- LOGIN -->
+                <div id="conta-tab-login" class="conta-tab-conteudo ativo">
+                    <div class="conta-form-card">
+                        <h3>Bem-vindo de volta</h3>
+                        <p class="conta-form-sub">Entre com seu email e senha</p>
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" placeholder="seu@email.com" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-senha">Senha</label>
+                            <div class="input-senha-wrap">
+                                <input type="password" id="login-senha" placeholder="Sua senha" autocomplete="current-password">
+                                <button type="button" class="btn-ver-senha" data-target="login-senha">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="login-erro" class="conta-erro" style="display:none"></div>
+                        <button type="button" class="btn-primary btn-large" id="btn-fazer-login">Entrar</button>
+                        <p class="conta-form-link">Não tem conta? <a href="#" data-tab-switch="cadastro">Criar agora</a></p>
+                    </div>
+                </div>
+
+                <!-- CADASTRO -->
+                <div id="conta-tab-cadastro" class="conta-tab-conteudo">
+                    <div class="conta-form-card">
+                        <h3>Criar sua conta</h3>
+                        <p class="conta-form-sub">Guarde seus pedidos e orçamentos</p>
+                        <div class="form-group">
+                            <label for="cad-nome">Nome completo</label>
+                            <input type="text" id="cad-nome" placeholder="Seu nome" autocomplete="name">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cad-email">Email</label>
+                                <input type="email" id="cad-email" placeholder="seu@email.com" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="cad-telefone">WhatsApp</label>
+                                <input type="tel" id="cad-telefone" placeholder="(37) 99999-9999">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cad-senha">Senha</label>
+                                <div class="input-senha-wrap">
+                                    <input type="password" id="cad-senha" placeholder="Mínimo 6 caracteres">
+                                    <button type="button" class="btn-ver-senha" data-target="cad-senha">
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cad-senha2">Confirmar senha</label>
+                                <div class="input-senha-wrap">
+                                    <input type="password" id="cad-senha2" placeholder="Repita a senha">
+                                    <button type="button" class="btn-ver-senha" data-target="cad-senha2">
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cad-erro" class="conta-erro" style="display:none"></div>
+                        <button type="button" class="btn-primary btn-large" id="btn-cadastrar">Criar conta</button>
+                        <p class="conta-form-link">Já tem conta? <a href="#" data-tab-switch="login">Entrar</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estado: LOGADO — dashboard -->
+        <div id="conta-logado" style="display:none">
+            <section class="conta-hero">
+                <div class="container conta-hero-logado">
+                    <div>
+                        <h2>Olá, <span id="conta-nome-exibido"></span> 👋</h2>
+                        <p class="secao-subtitulo" id="conta-email-exibido"></p>
+                    </div>
+                    <button type="button" class="btn-secondary btn-sair" id="btn-sair">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        Sair
+                    </button>
+                </div>
+            </section>
+
+            <div class="container conta-dashboard">
+
+                <!-- Abas do dashboard -->
+                <div class="dash-tabs">
+                    <button type="button" class="dash-tab ativo" data-dash="historico">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Histórico
+                    </button>
+                    <button type="button" class="dash-tab" data-dash="codigos">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        Meus Códigos
+                    </button>
+                    <button type="button" class="dash-tab" data-dash="contato">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Contato / Recado
+                    </button>
+                </div>
+
+                <!-- ABA: HISTÓRICO -->
+                <div id="dash-historico" class="dash-painel ativo">
+                    <div class="dash-secao">
+                        <h3>Ordens de Serviço</h3>
+                        <div id="lista-os-usuario" class="historico-lista"></div>
+                    </div>
+                    <div class="dash-secao">
+                        <h3>Pedidos da Loja</h3>
+                        <div id="lista-pedidos-usuario" class="historico-lista"></div>
+                    </div>
+                    <div class="dash-secao">
+                        <h3>Orçamentos Solicitados</h3>
+                        <div id="lista-orc-usuario" class="historico-lista"></div>
+                    </div>
+                </div>
+
+                <!-- ABA: MEUS CÓDIGOS -->
+                <div id="dash-codigos" class="dash-painel">
+                    <p class="dash-desc">Todos os códigos gerados nas suas solicitações. Use-os para consultar status.</p>
+                    <div id="lista-codigos-usuario" class="codigos-lista"></div>
+                </div>
+
+                <!-- ABA: CONTATO / RECADO -->
+                <div id="dash-contato" class="dash-painel">
+                    <p class="dash-desc">Envie um novo recado para a oficina ou registre uma solicitação de contato.</p>
+                    <div class="conta-form-card">
+                        <div class="form-group">
+                            <label for="dash-aparelho">Modelo do aparelho</label>
+                            <input type="text" id="dash-aparelho" placeholder="Ex: iPhone 13, Galaxy A53">
+                        </div>
+                        <div class="form-group">
+                            <label for="dash-mensagem">Mensagem para a oficina</label>
+                            <textarea id="dash-mensagem" rows="4" placeholder="Descreva o problema, tire dúvidas, peça retorno..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="dash-senha-aparelho">Senha do celular (opcional)</label>
+                            <input type="text" id="dash-senha-aparelho" placeholder="Só se precisar deixar o aparelho">
+                        </div>
+                        <button type="button" class="btn-primary" id="btn-dash-enviar-recado">Enviar recado</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container-pub" class="toast-container-pub"></div>
+
+
+    <!-- Modais de Informação (Garantia, etc) -->
+    <div id="modal-garantia" class="modal-info-overlay" style="display:none;">
+        <div class="modal-info-box">
+            <span class="modal-close">×</span>
+            <h3>🛡️ Garantia</h3>
+            <p>Todos os nossos reparos têm <strong>90 dias de garantia</strong> conforme o CDC (Código de Defesa do Consumidor).</p>
+            <h4 class="mt-3" style="color:var(--danger-color)">A GARANTIA NÃO COBRE:</h4>
+            <ul style="text-align:left; margin-top:10px; padding-left:20px; line-height:1.8;">
+                <li>Quebra de vidro ou display (após entrega)</li>
+                <li>Danos causados por líquidos</li>
+                <li>Danos por mau uso ou quedas</li>
+                <li>Aparelhos abertos por terceiros</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-reparos" class="modal-info-overlay" style="display:none;">
+        <div class="modal-info-box">
+            <span class="modal-close">×</span>
+            <h3>🔧 O que reparamos</h3>
+            <p>Somos especializados em manutenção avançada. Principais serviços:</p>
+            <ul style="text-align:left; margin-top:10px; padding-left:20px; line-height:1.8;">
+                <li><strong>Troca de Tela:</strong> Sem mensagens de peça trocada para iPhone.</li>
+                <li><strong>Bateria:</strong> Sem deixar mensagens de bateria desconhecida.</li>
+                <li><strong>Troca de Vidro:</strong> Mantendo o display original.</li>
+                <li><strong>Troca de Tampas:</strong> Feito a laser (iPhones).</li>
+                <li><strong>Câmeras e Lentes:</strong> Foco e módulos completos.</li>
+                <li><strong>Reparo de Face ID:</strong> Recuperação de biometria facial.</li>
+                <li><strong>Conector:</strong> Reparo da entrada de carga.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-prazos" class="modal-info-overlay" style="display:none;">
+        <div class="modal-info-box">
+            <span class="modal-close">×</span>
+            <h3>⏱️ Tempo de Reparo</h3>
+            <p>O tempo do reparo vai depender da demanda da data enviada.</p>
+            <ul style="text-align:left; margin-top:10px; padding-left:20px; line-height:1.8;">
+                <li><strong>Peças em Estoque:</strong> Geralmente de 1 a 10 dias úteis após a chegada do aparelho.</li>
+                <li><strong>Peças Fora de Estoque:</strong> Pode aumentar o tempo do reparo em até 5 dias ou mais.</li>
+                <li><strong>Placas e Reparos Complexos:</strong> Podem levar até 30 dias úteis.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
